@@ -1,6 +1,9 @@
 # Parent layer
 FROM node:17-alpine
 
+# Nodemon globaal installeren (hot reloading during dev)
+RUN npm install -g nodemon
+
 # Working directory (when we run commands or specify paths, it's from this location)
 WORKDIR /app
 
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 4000
 
 # Commands that should be run in runtime (when container is running)
-CMD ["node", "app.js"]
+CMD ["npm", "run", "dev"]
