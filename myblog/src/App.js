@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [blogs, setBlogs] = useState([])
   useEffect(() => {
-    fetch('http://localhost:4000/')
+    fetch('http://localhost:4000/') // link to api container
       .then(res => res.json())
       .then(data => setBlogs(data))
   }, [])
